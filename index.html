@@ -1,0 +1,326 @@
+
+<!-- #Create Project on smart parking, ParkSmart Pro with HTML5 structure, add DOCTYPE, UTF-8, viewport, title and link CSS & JS files -->
+<!-- #Create Header sticky with logo (car emoji, ParkSmart, tagline) and add PRO badge with glowing background orbs -->
+<!-- #AddHeroSection with heading “Park Smarter" and a short description, center aligned -->
+<!-- #AddCityPills for Hyderabad, Warangal, Karimnagar, Nizamabad with images and include a stats bar showing locations, total slots, availability and cities covered -->
+<!-- #CreateFeatureCards showing Live Availability, Instant Booking, Easy Exit Pay, and Admin Control with icons and descriptions -->
+<!-- #AddLoginCards for Customer and Admin with images, buttons, and a footer section -->
+<!-- #CreateCustomerForm with city, location, vehicle details and add buttons for check, book, pay, and cancel with a message box and back link -->
+<!-- #CreateAdminLogin with tabs (Main/Admin), input fields, password option and login button -->
+<!-- #Create Main Dashboard with stats cards, slot grid, search bar and bookings table -->
+<!-- #Create Location Dashboard with stats, slot availability, search and location-based bookings table -->
+<!-- #Create Ticket Modal popup showing booking details with options to download, pay or close -->
+<!-- #Create Pay And Cancel Modals with booking ID input, hours entry and action buttons -->
+<!-- #Finalize project by hiding sections, placing script at bottom, matching IDs and avoiding inline CSS -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ParkSmart | Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="bg-glow"><div class="glow-orb"></div><div class="glow-orb2"></div></div>
+ 
+<!-- HEADER -->
+<header class="main-header">
+    <div class="logo">
+        <div class="logo-icon">🚗</div>
+        <div>
+            <div>ParkSmart</div>
+            <div class="tagline">Smart Parking Solution</div>
+        </div>
+    </div>
+    <div class="header-badge">PRO</div>
+</header>
+ 
+<!-- LANDING -->
+<div id="landing">
+    <!-- Hero -->
+    <div class="hero-section">
+        <h1>Park Smarter,<br><span>Not Harder</span></h1>
+        <p>Real-time slot availability, instant booking, and seamless exits across Telangana's smartest parking network.</p>
+    </div>
+ 
+    <!-- City Pills -->
+    <div class="city-strip">
+        <div class="city-pill">
+            <img src="https://images.unsplash.com/photo-1616423841559-0ce5fe3eb6d2?auto=format&fit=crop&w=60&q=80" alt="Hyderabad">
+            Hyderabad
+        </div>
+        <div class="city-pill">
+            <img src="https://images.unsplash.com/photo-1569949381669-ecf31ae8e613?auto=format&fit=crop&w=60&q=80" alt="Warangal">
+            Warangal
+        </div>
+        <div class="city-pill">
+            <img src="https://images.unsplash.com/photo-1587474260584-136574528ed5?auto=format&fit=crop&w=60&q=80" alt="Karimnagar">
+            Karimnagar
+        </div>
+        <div class="city-pill">
+            <img src="https://images.unsplash.com/photo-1599202860130-f600f4948364?auto=format&fit=crop&w=60&q=80" alt="Nizamabad">
+            Nizamabad
+        </div>
+    </div>
+ 
+    <!-- Stats Bar -->
+    <div class="stats-bar">
+        <div class="stats-bar-item">
+            <div class="sbi-val">20+</div>
+            <div class="sbi-label">Locations</div>
+        </div>
+        <div class="stats-bar-item">
+            <div class="sbi-val green">1000</div>
+            <div class="sbi-label">Total Slots</div>
+        </div>
+        <div class="stats-bar-item">
+            <div class="sbi-val amber">24/7</div>
+            <div class="sbi-label">Availability</div>
+        </div>
+        <div class="stats-bar-item">
+            <div class="sbi-val">4 Cities</div>
+            <div class="sbi-label">Covered</div>
+        </div>
+    </div>
+ 
+    <!-- Feature Cards -->
+    <div class="features-row">
+        <div class="feat-card">
+            <div class="fc-icon">🔍</div>
+            <div class="fc-title">Live Availability</div>
+            <div class="fc-desc">Check real-time slots before you drive</div>
+        </div>
+        <div class="feat-card">
+            <div class="fc-icon">🎫</div>
+            <div class="fc-title">Instant Booking</div>
+            <div class="fc-desc">Reserve your spot in seconds</div>
+        </div>
+        <div class="feat-card">
+            <div class="fc-icon">💳</div>
+            <div class="fc-title">Easy Exit Pay</div>
+            <div class="fc-desc">Pay only for the time you used</div>
+        </div>
+        <div class="feat-card">
+            <div class="fc-icon">🛡️</div>
+            <div class="fc-title">Admin Control</div>
+            <div class="fc-desc">Full dashboard for staff management</div>
+        </div>
+    </div>
+ 
+    <!-- Mode Cards -->
+    <div class="landing-screen">
+        <div class="mode-card" onclick="showPage('customer')">
+            <img class="mode-card-img" src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?auto=format&fit=crop&w=600&q=80" alt="Customer parking">
+            <div class="mode-card-overlay"></div>
+            <div class="mode-card-body">
+                <h3>👤 Customer Login</h3>
+                <p>Book your spot, get a ticket and exit with ease</p>
+                <div class="mode-card-btn">Get Started →</div>
+            </div>
+        </div>
+        <div class="mode-card" onclick="showPage('adminLogin')">
+            <img class="mode-card-img" src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=600&q=80" alt="Admin dashboard">
+            <div class="mode-card-overlay"></div>
+            <div class="mode-card-body">
+                <h3>🛡️ Admin Login</h3>
+                <p>Monitor all locations, bookings and revenue</p>
+                <div class="mode-card-btn">Staff Access →</div>
+            </div>
+        </div>
+    </div>
+ 
+    <!-- Footer -->
+    <div class="site-footer">
+        © 2025 <span>ParkSmart Pro</span> · Built for Telangana · All rights reserved
+    </div>
+</div>
+ 
+<!-- CUSTOMER PAGE -->
+<div id="customer" class="container hidden">
+    <h3><span style="background:linear-gradient(90deg,#6366f1,#8b5cf6);padding:2px 8px;border-radius:6px;">P</span> Book Your Space</h3>
+    <div class="input-grid">
+        <div class="input-group">
+            <label>📍 City</label>
+            <select id="city" onchange="loadLocs()">
+                <option value="">Select City</option>
+                <option value="Hyderabad">Hyderabad</option>
+                <option value="Warangal">Warangal</option>
+                <option value="Karimnagar">Karimnagar</option>
+                <option value="Nizamabad">Nizamabad</option>
+            </select>
+        </div>
+        <div class="input-group"><label>🎯 Location</label><select id="loc"><option value="">Select Location</option></select></div>
+        <div class="input-group"><label>Vehicle No.</label><input type="text" id="veh" placeholder="TS 09 XY 1234"></div>
+        <div class="input-group"><label>🚙 Type</label><select id="type"><option value="Car">Car (₹50/hr)</option><option value="Bike">Bike (₹20/hr)</option></select></div>
+    </div>
+    <div class="btn-grid">
+        <button class="btn btn-primary" onclick="checkSlots()">🔍 Availability</button>
+        <button class="btn btn-success" onclick="book()">🎫 Book & Ticket</button>
+        <button class="btn btn-warning" onclick="openPayModal()">💳 Exit & Pay</button>
+    </div>
+    <div style="margin-top:12px;">
+        <button class="btn btn-danger" style="width:100%;" onclick="openCancelModal()">❌ Cancel Booking</button>
+    </div>
+    <div id="custMsg" class="msg-box"></div>
+    <a href="#" class="back-link" onclick="return goHome()">← Back to Home</a>
+</div>
+ 
+<!-- ADMIN LOGIN -->
+<div id="adminLogin" class="container hidden">
+    <h3>Staff Access</h3>
+    <div class="login-tabs">
+        <div id="tabMain" class="login-tab active" onclick="switchAdmin('MAIN')">Main Admin</div>
+        <div id="tabLoc"  class="login-tab"        onclick="switchAdmin('LOC')">Location Admin</div>
+    </div>
+    <div id="mainAdminFields">
+        <div class="input-group" style="margin-bottom:15px;">
+            <label>Username</label>
+            <input type="text" id="adminUser" placeholder="Enter Username">
+        </div>
+    </div>
+    <div id="locAdminFields" class="hidden">
+        <div class="input-group" style="margin-bottom:15px;">
+            <label>Assigned Location</label>
+            <select id="adminLocSelect"></select>
+        </div>
+    </div>
+    <div class="input-group">
+        <label>Password</label>
+        <div class="password-wrapper">
+            <input type="password" id="adminPass" placeholder="••••••">
+            <button class="eye-btn" type="button" onclick="togglePassword()" id="eyeBtn">👁️</button>
+        </div>
+    </div>
+    <div id="adminMsg" class="msg-box"></div>
+    <button class="btn btn-primary" style="width:100%;margin-top:20px;" onclick="handleLogin()">Authorize</button>
+    <a href="#" class="back-link" onclick="return goHome()">← Back to Home</a>
+</div>
+ 
+<!-- MAIN ADMIN DASHBOARD -->
+<div id="mainDash" class="dashboard hidden">
+    <div class="dash-header">
+        <div>
+            <h2>🛡️ Main Admin Dashboard</h2>
+            <div class="dash-subtitle">All locations — full overview</div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="btn btn-primary" style="padding:10px 18px;font-size:0.8rem;" onclick="renderMainDash()">🔄 Refresh</button>
+            <button class="btn btn-dark"    style="padding:10px 18px;font-size:0.8rem;" onclick="return goHome()">← Logout</button>
+        </div>
+    </div>
+    <div class="stats-row">
+        <div class="stat-card sc-purple"><div class="s-label">Total Bookings</div><div class="s-value purple" id="d-total">0</div></div>
+        <div class="stat-card sc-green"><div class="s-label">Active Now</div><div class="s-value green" id="d-active">0</div></div>
+        <div class="stat-card sc-blue"><div class="s-label">Completed</div><div class="s-value" id="d-paid" style="color:#60a5fa;">0</div></div>
+        <div class="stat-card sc-red"><div class="s-label">Cancelled</div><div class="s-value red" id="d-cancelled">0</div></div>
+        <div class="stat-card sc-orange"><div class="s-label">Total Revenue</div><div class="s-value orange" id="d-revenue">₹0</div></div>
+    </div>
+    <div class="section-title">🅿️ Slots Booked per Location (Active / 50)</div>
+    <div class="slots-grid" id="slotsGrid"></div>
+    <div class="section-title">🔍 Search Vehicle</div>
+    <div class="search-bar">
+        <div class="input-group"><label>Vehicle Number</label><input type="text" id="mainSearch" placeholder="e.g. TS 09 XY 1234" oninput="renderMainTable()"></div>
+    </div>
+    <div class="section-title">📋 All Bookings</div>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Booking ID</th><th>Vehicle No.</th><th>Type</th><th>Location</th><th>Date</th><th>Time</th><th>Rate</th><th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="mainTableBody"></tbody>
+        </table>
+    </div>
+</div>
+ 
+<!-- LOCATION ADMIN DASHBOARD -->
+<div id="locDash" class="dashboard hidden">
+    <div class="dash-header">
+        <div>
+            <h2>📍 Location Dashboard</h2>
+            <div class="dash-subtitle" id="locDashSubtitle">—</div>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;">
+            <button class="btn btn-primary" style="padding:10px 18px;font-size:0.8rem;" onclick="renderLocDash()">🔄 Refresh</button>
+            <button class="btn btn-dark"    style="padding:10px 18px;font-size:0.8rem;" onclick="return goHome()">← Logout</button>
+        </div>
+    </div>
+    <div class="stats-row">
+        <div class="stat-card sc-purple"><div class="s-label">Total Bookings</div><div class="s-value purple" id="ld-total">0</div></div>
+        <div class="stat-card sc-green"><div class="s-label">Active Now</div><div class="s-value green" id="ld-active">0</div></div>
+        <div class="stat-card sc-blue"><div class="s-label">Slots Available</div><div class="s-value" id="ld-avail" style="color:#60a5fa;">0</div></div>
+        <div class="stat-card sc-orange"><div class="s-label">Revenue</div><div class="s-value orange" id="ld-revenue">₹0</div></div>
+    </div>
+    <div class="section-title">🅿️ Slot Usage</div>
+    <div id="locSlotChip" class="slots-grid" style="max-width:320px;"></div>
+    <div class="section-title">🔍 Search Vehicle</div>
+    <div class="search-bar">
+        <div class="input-group"><label>Vehicle Number</label><input type="text" id="locSearch" placeholder="e.g. TS 09 XY 1234" oninput="renderLocTable()"></div>
+    </div>
+    <div class="section-title">📋 Bookings at This Location</div>
+    <div class="table-wrap">
+        <table>
+            <thead>
+                <tr>
+                    <th>Booking ID</th><th>Vehicle No.</th><th>Type</th><th>Date</th><th>Time</th><th>Rate</th><th>Status</th>
+                </tr>
+            </thead>
+            <tbody id="locTableBody"></tbody>
+        </table>
+    </div>
+</div>
+ 
+<!-- TICKET MODAL -->
+<div id="ticketModal" class="modal-overlay hidden">
+    <div class="ticket-card">
+        <div class="ticket-header"><h2>🚗 ParkSmart</h2><p>Parking Confirmation Ticket</p></div>
+        <div class="ticket-body">
+            <div class="booking-id-box">
+                <div class="bid-label">Booking ID</div>
+                <div class="bid-value" id="t-id">—</div>
+            </div>
+            <div class="ticket-row"><span class="tkey">🚘 Vehicle No.</span><span class="tval" id="t-veh">—</span></div>
+            <div class="ticket-row"><span class="tkey">🚙 Type</span><span class="tval" id="t-type">—</span></div>
+            <div class="ticket-row"><span class="tkey">📍 Location</span><span class="tval" id="t-loc">—</span></div>
+            <div class="ticket-row"><span class="tkey">🗓️ Date</span><span class="tval" id="t-date">—</span></div>
+            <div class="ticket-row"><span class="tkey">⏰ Time</span><span class="tval" id="t-time">—</span></div>
+            <div class="ticket-row"><span class="tkey">💰 Rate</span><span class="tval" id="t-rate">—</span></div>
+            <div class="ticket-row"><span class="tkey">Status</span><span class="tval"><span class="ticket-status-badge">✅ ACTIVE</span></span></div>
+        </div>
+        <div class="ticket-footer">Save your Booking ID to cancel or pay later.<br>ParkSmart — Smart Parking Solution</div>
+        <div class="ticket-actions">
+            <button class="btn btn-primary" onclick="printTicket()">🖨️ Download</button>
+            <button class="btn btn-warning" onclick="closeTicketOpenPay()">💳 Exit & Pay</button>
+            <button class="ticket-close-btn" onclick="closeTicket()">✕ Close</button>
+        </div>
+    </div>
+</div>
+ 
+<!-- PAY MODAL -->
+<div id="payModal" class="modal-overlay hidden">
+    <div class="action-modal">
+        <h3>💳 Exit &amp; Pay</h3>
+        <div class="input-group"><label>Booking ID</label><input type="text" id="payId" placeholder="e.g. PS-4821" style="color:white;"></div>
+        <div class="input-group"><label>Hours Parked</label><input type="number" id="payHrs" placeholder="e.g. 2" min="1" style="color:white;"></div>
+        <div id="payBill" class="msg-box"></div>
+        <button class="btn btn-warning" onclick="payAction()">Calculate &amp; Pay</button>
+        <span class="modal-cancel-link" onclick="closePayModal()">← Go Back</span>
+    </div>
+</div>
+ 
+<!-- CANCEL MODAL -->
+<div id="cancelModal" class="modal-overlay hidden">
+    <div class="action-modal">
+        <h3>❌ Cancel Booking</h3>
+        <div class="input-group"><label>Booking ID</label><input type="text" id="cancelId" placeholder="e.g. PS-4821" style="color:white;"></div>
+        <div id="cancelMsg" class="msg-box"></div>
+        <button class="btn btn-danger" onclick="cancelAction()">Confirm Cancel</button>
+        <span class="modal-cancel-link" onclick="closeCancelModal()">← Go Back</span>
+    </div>
+</div>
+ 
+<script src="script.js"></script>
+</body>
+</html>
